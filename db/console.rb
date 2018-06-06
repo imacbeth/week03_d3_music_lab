@@ -7,10 +7,12 @@ Artist.delete_all()
 
 artist1 = Artist.new ({'name' => 'Marvin Gaye'})
 artist2 = Artist.new ({'name' => 'Fleetwood Mac'})
+artist3 = Artist.new ({'name' => 'Haim'})
 
 
 artist1.save()
 artist2.save()
+artist3.save()
 
 album1 = Album.new ({
   'title' => 'Whats going on',
@@ -29,9 +31,17 @@ album3 = Album.new({
   'artist_id' => artist2.id()
   })
 
+album4 = Album.new({
+  'title' => 'Something to Tell You',
+  'genre' => 'Rock',
+  'artist_id' => artist3.id()
+    })
+
 album1.save()
 album2.save()
 album3.save()
+album4.save()
+
 
 binding.pry
 
