@@ -34,6 +34,9 @@ attr_reader :id
   return albums.map {|album| Album.new(album)}
   end
 
-
+  def self.delete_all()
+    sql = "DELETE FROM artists"
+    SqlRunner.run(sql)
+  end
 
 end
