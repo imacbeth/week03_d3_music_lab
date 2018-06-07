@@ -45,4 +45,11 @@ attr_reader :id
     SqlRunner.run(sql, values)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM artists WHERE id = $1"
+    values = [id]
+    artist = SqlRunner.run(sql, values).first
+    return Artist.new(artist)
+  end
+
 end
